@@ -37,7 +37,7 @@ steps:
   inputs:
     command: 'restore'
     projects: '**/*.csproj'
-    
+
 - template: templates/build.yml
   parameters:
     buildConfiguration: 'Debug'
@@ -47,5 +47,5 @@ steps:
     buildConfiguration: 'Release'
 
 - task: PublishBuildArtifacts@1
-  displayName: 'Publish Artifact: drop'
+  displayName: 'Publish Artifact: drop ($(Build.ArtifactStagingDirectory))'
   condition: succeeded()
