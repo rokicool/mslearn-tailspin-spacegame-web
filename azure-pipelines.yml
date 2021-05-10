@@ -38,14 +38,6 @@ steps:
     command: 'restore'
     projects: '**/*.csproj'
 
-<<<<<<< HEAD
-- task: DotNetCoreCLI@2
-  displayName: 'Build the project - Release '
-  inputs:
-    command: 'build'
-    arguments: '--no-restore --configuration Release'
-    projects: '**/*.csproj'
-=======
 - template: templates/build.yml
   parameters:
     buildConfiguration: 'Debug'
@@ -57,4 +49,3 @@ steps:
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Artifact: drop ($(Build.ArtifactStagingDirectory))'
   condition: succeeded()
->>>>>>> build-pipeline
